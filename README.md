@@ -50,6 +50,14 @@ This system allows patients and doctors to interact through smart contracts, ens
 - Data stored on-chain is encrypted
 - Only authorized parties can decrypt (Only patient can authorize/unauthorize doctor)
 
+## 🔑 Hybrid Authentication
+- **Wallet authentication (Web3 identity):** users authenticate with MetaMask by connecting their wallet and signing transactions.
+- **Role-based contract checks:** smart contracts enforce patient/doctor permissions and on-chain authorization rules.
+- **Data-level access control:** even with on-chain read access, medical payloads remain encrypted and require the correct wallet key to decrypt.
+- **Encryption technique:** used MetaMask-compatible public-key encryption with `x25519-xsalsa20-poly1305` (NaCl box pattern with ephemeral key + nonce) for profile, medical record, and allergy payload protection.
+- **End-to-end decryption path:** payloads are encrypted in the frontend and decrypted by wallet-assisted methods, so plaintext is not stored on-chain.
+- **Two-layer trust model:** blockchain validates identity and permissions, while encryption protects confidentiality of profile, record, and allergy data.
+- 
 ---
 
 # 🧱 System Architecture
