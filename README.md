@@ -73,11 +73,6 @@ This system allows patients and doctors to interact through smart contracts, ens
   - Encryption / decryption
   - Contract calls
 
-## Encryption Stack
-- MetaMask `eth_getEncryptionPublicKey`
-- `eth-sig-util`
-- `tweetnacl`
-
 ---
 
 # 📦 Installation
