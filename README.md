@@ -75,6 +75,97 @@ This system allows patients and doctors to interact through smart contracts, ens
 
 ---
 
+# 🔄 How the Program Works (Workflow)
+
+Before using the app, both the doctor and patient must register separately. Then follow the phases below in order.
+
+---
+
+## Phase 1 – Registration (one-time setup)
+
+**Doctor (do this first):**
+1. Open the app and connect MetaMask
+2. Select the **Doctor** role
+3. Fill in the profile, directly click the **Get My Encryption Key** button and the key will automatically pasted to the public key field
+4. Click **Register as Doctor** – this writes your profile to the blockchain
+5. Set your **encryption public key** – patients use this to encrypt data for you
+
+**Patient:**
+1. Connect MetaMask and select the **Patient** role
+2. Fill in personal details (name, ID, birthday, weight, height, etc.)
+3. Enter the doctor's wallet address and the doctor's encryption public key
+4. Click **Register as Patient** – your data is encrypted locally before going on-chain
+5. Click **Show my encryption public key** to share your key to your authorized doctor in order to let them encrypted your data
+
+---
+
+## Phase 2 – Authorization and Coins (must be done before appointment)
+
+These two steps can be done in either order, but both must be completed before the appointment can be settled.
+
+**Patient authorizes the doctor:**
+- Make sure you have fill in the doctor address in the profile before authorizing a doctor
+- Go to Doctor Authorization
+- Enter the doctor's wallet address, set to `true`
+- Click **Apply authorization**
+- Without this, the doctor cannot access any of your records
+
+**Grant initial coins to the patient:**
+- Go to Appointments & Coins
+- Enter the patient address and an amount
+- Click **Grant Initial Coins**
+- Without coins, the final settlement will fail
+
+---
+
+## Phase 3 – Appointment
+
+**Patient creates an appointment:**
+1. Go to Appointments & Coins
+2. Enter the doctor's address, date/time, fee, and reason
+3. Click **Create appointment**
+4. Status becomes: `Requested`
+
+**Doctor responds:**
+1. Click **Load appointment IDs** to see pending appointments
+2. Enter the appointment ID
+3. Click **Approve** or **Reject**
+4. Status becomes: `Approved` or `Rejected`
+
+---
+
+## Phase 4 – Complete the Appointment (settlement + record in one step)
+
+**Doctor does all of the following in one action:**
+1. Enter the patient's wallet address and their encryption public key
+2. Fill in Diagnosis, Prescription, and Notes
+3. Click **Complete + Settle + Add Medical Record**
+
+This single action does three things at once:
+- Marks the appointment as `Completed`
+- Transfers coins from the patient's balance to the doctor
+- Encrypts the medical record and writes it to the blockchain
+
+---
+
+## Phase 5 – View Records
+
+Either the patient or an authorized doctor can decrypt and view records:
+
+1. Go to the **Clinical Explorer** section
+2. Enter the patient's wallet address
+3. Click **Decrypt profile**, **Decrypt records**, or **Decrypt allergies**
+4. MetaMask will pop up asking you to confirm decryption
+5. The plaintext data appears on screen
+
+---
+
+## Tips
+
+If you have registered two different roles with the same wallet, you are suggested to enter the contract one by one to perform the action.<br>
+Otherwise, the program will always identify you as a patient.<br>
+
+
 # 📦 Installation
 
 ```bash
