@@ -1,4 +1,4 @@
-# S431F-Blockchain
+# S431F-Blockchain [Link](https://github.com/Group-Project-MU/S431F-Blockchain)
 # 🏥 Medical Chain – Encrypted Healthcare DApp
 
 A blockchain-based healthcare system that enables secure storage and sharing of patient data using end-to-end encryption.
