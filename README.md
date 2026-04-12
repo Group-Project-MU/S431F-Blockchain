@@ -165,6 +165,7 @@ Either the patient or an authorized doctor can decrypt and view records:
 If you have registered two different roles with the same wallet, you are suggested to enter the contract one by one to perform the action.<br>
 Otherwise, the program will always identify you as a patient.<br>
 
+---
 
 # 📦 Installation
 
